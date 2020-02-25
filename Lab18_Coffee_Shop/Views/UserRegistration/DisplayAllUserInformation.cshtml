@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "DisplayAllUserInformation";
+}
+
+@model RegisterUser
+<h1>Your Information</h1>
+
+<table class="table-responsive-sm, table">
+    <tr>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Phone Number</th>
+    </tr>
+
+    <tr>
+        <td>@Model.UserName</td>
+        <td>@Model.Email</td>
+        <td>@Model.Gender</td>
+        <td>@Model.Age</td>
+        <td>@Model.PhoneNumber</td>
+    </tr>
+</table>

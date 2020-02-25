@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "RegistrationForm";
+}
+
+@model RegisterUser
+<h1>Registration Form</h1>
+
+@Html.ValidationSummary()
+
+<form action="../UserRegistration/DisplayUserInformation" method="post">  @*sends to controller to send to display page*@
+    <div class="col-md-2">
+        @Html.LabelFor(m => m.UserName)
+        @Html.ValidationMessageFor(m => m.UserName)
+        <input type="text" name="UserName" value="@Model.UserName" placeholder="JaneDoe" required />
+
+        @Html.LabelFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email)
+        <input type="text" name="Email" value="@Model.Email" placeholder="JaneD@gmail.com" required />
+
+        @Html.LabelFor(m => m.Password)
+        @Html.ValidationMessageFor(m => m.Password)
+        <input type="text" name="Password" value="@Model.Password" placeholder="P@ssword" required />
+
+        @Html.LabelFor(m => m.Gender)
+        <Select id="genders" name="Gender" value="@Model.Gender">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+        </Select>
+
+        @Html.LabelFor(m=> m.Age)
+        <input type="text" name="Age" value="@Model.Age" placeholder="21"/>
+
+        @Html.LabelFor(m=> m.PhoneNumber)
+        <input type="text" name="PhoneNumber" value="@Model.PhoneNumber" placeholder="313-313-3331"/>
+
+        <div>
+            <p></p>
+            <input type="submit" value="Submit" />
+        </div>
+        
+
+    </div>
+</form>
